@@ -9,6 +9,10 @@ public class LinkedList {
         tail = null;
     }
 
+    public Node head() {
+        return head;
+    }
+
     /** Inserts a new node to the front of the list */
     public void insertAtFront(int elem) {
         Node newNode = new Node(elem);
@@ -81,6 +85,7 @@ public class LinkedList {
 
         return elem;
     }
+
 
 }
 
