@@ -1,4 +1,4 @@
-package objectOrientedDesign;
+package aggregation;
 
 public class Student {
     private String name;

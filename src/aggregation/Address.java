@@ -1,4 +1,4 @@
-package objectOrientedDesign;
+package aggregation;
 
 /** Represents an address in the US */
 public class Address {
