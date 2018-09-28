@@ -18,6 +18,7 @@ public class TowersOfHanoi  {
      * Moves the disks from tower 1 to tower 3 using tower 2.
      * */
     public void solve () {
+
         moveTower (totalDisks, 1, 3, 2);
     }
 
@@ -47,6 +48,7 @@ public class TowersOfHanoi  {
      * @param end destination peg
      */
     private void moveOneDisk (int start, int end) {
+
         System.out.println ("Move one disk from " + start + " to " + end);
     }
 }
