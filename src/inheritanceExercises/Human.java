@@ -18,7 +18,10 @@ public class Human extends Creature {
         // call parent's constructor
         // assign values to firstName and lastName
 
-
+        // Solution
+        super(greeting);
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     /**
@@ -28,6 +31,9 @@ public class Human extends Creature {
     @Override
     public void speak() {
         // FILL IN CODE: Should print:  Human says: <greeting>
+
+        // Solution:
+        System.out.println("Human " + firstName + " says: " + getGreeting());
     }
 }
 

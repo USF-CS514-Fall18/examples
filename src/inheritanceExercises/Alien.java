@@ -17,6 +17,10 @@ public class Alien extends Creature {
         // FILL IN CODE:
         // call the parent's constructor to initialize the greeting
         // assign a value to planet
+
+        // Solution:
+        super(greeting);
+        this.planet = planet;
     }
 
     /**
@@ -27,5 +31,12 @@ public class Alien extends Creature {
     public void speak() {
         // FILL IN CODE: it should say Alien from planet <name of planet> says: <greeting>
 
+        // Solution:
+        System.out.println("Alien from planet " + this.planet + " says: " + getGreeting());
+    }
+
+    /** Exists only in class Alien. Represents "fighting". */
+    public void fight() {
+        System.out.println("Let's fight!");
     }
 }
