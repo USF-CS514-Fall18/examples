@@ -17,6 +17,7 @@ public class PrintWriterExample {
             for (int i = 0; i < arr.length; i++) {
                 pw.println(arr[i]);
             }
+            pw.flush();
         }
         catch (IOException e) {
             System.out.println("Could not write to the file: " + e);
