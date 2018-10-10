@@ -15,6 +15,7 @@ public class Advice extends Thought {
                 "than they appear.");
 
         System.out.println();
-        super.message();  // explicitly invokes the parent's version
+        //super.message();  // explicitly invokes the parent's version
     }
+
 }

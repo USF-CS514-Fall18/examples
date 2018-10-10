@@ -6,6 +6,7 @@ package polymorphismViaInheritance;
  */
 public class Hourly extends Employee {
    private int hoursWorked;
+   // payRate for the Hourly Employee is the pay rate per hour
 
    /** Constructor: Sets up this hourly employee using the specified information.
     *
@@ -35,6 +36,7 @@ public class Hourly extends Employee {
     *
     * @return pay
     */
+   @Override
    public double pay() {
       double payment = getPayRate() * hoursWorked;
 

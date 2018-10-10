@@ -2,7 +2,8 @@ package polymorphismViaInheritance;
 
 /**
  * StaffMember.java       Author: Lewis/Loftus
- * Represents a generic staff member.
+ * Represents a generic staff member. Abstract class.
+ * Has an abstract method pay() that will be overridden in concrete subclasses.
  */
 abstract public class StaffMember {
    private String name;
@@ -16,9 +17,9 @@ abstract public class StaffMember {
     * @param ePhone phone
     */
    public StaffMember(String eName, String eAddress, String ePhone) {
-      name = eName;
-      address = eAddress;
-      phone = ePhone;
+      this.name = eName;
+      this.address = eAddress;
+      this.phone = ePhone;
    }
 
    /** Returns a string including the basic employee information.
@@ -27,10 +28,9 @@ abstract public class StaffMember {
     */
    public String toString()
    {
-      String result = "Name: " + name + System.lineSeparator();
-
-      result += "Address: " + address + System.lineSeparator();
-      result += "Phone: " + phone;
+      String result = "Name: " + this.name + System.lineSeparator();
+      result += "Address: " + this.address + System.lineSeparator();
+      result += "Phone: " + this.phone;
 
       return result;
    }
@@ -40,4 +40,5 @@ abstract public class StaffMember {
     * @return pay
     */
    public abstract double pay();
+
 }

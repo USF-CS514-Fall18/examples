@@ -24,8 +24,8 @@ public class Executive extends Employee {
     *
     * @param execBonus bonus amount
     */
-   public void awardBonus(double execBonus)
-   {
+   public void awardBonus(double execBonus) {
+
       bonus = execBonus;
    }
 
@@ -34,6 +34,7 @@ public class Executive extends Employee {
     *
     * @return pay
     */
+   @Override
    public double pay()
    {
       double payment = super.pay() + bonus;
