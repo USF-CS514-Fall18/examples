@@ -1,26 +1,16 @@
 package threads;
-
-
 /** A simple example demonstrating three threads (main, Thread1, Thread2).
- *  Shows how to create threads, how to start them, and the use of "join".
- *  Also shows that operations of Thread1 and Thread2 can be "interleaved".
- */
+ *  Shows how to create threads and how to start them.
+ *  Also shows that operations of Thread1 and Thread2 can be "interleaved"
+ *  since there is no synchronization.
+ *  Run this program multiple times and observe what gets printed. */
+
 public class PrintTaskExample {
-    public static void main(String[] args) throws InterruptedException {
-
-        Thread t1 = new Thread(new PrintTask(), "Thread1");
-        Thread t2 = new Thread(new PrintTask(), "Thread2");
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new PrintTask());
         t1.start();
+        Thread t2 = new Thread(new PrintTask());
         t2.start();
-
-        // main thread will wait for t1 and t2 to finish before printing Done
-        // comment lines with join and see what happens.
-        t1.join();
-        t2.join();
-
-        System.out.println("Done ");
-
-
-
+        System.out.println("Done");
     }
 }

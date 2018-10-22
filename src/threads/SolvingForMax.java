@@ -1,5 +1,7 @@
 package threads;
 
+import java.util.Random;
+
 /**
  * Creates NUM_ROWS threads to search for the maximum value of a large matrix. Each
  * thread searches for max in one row of the matrix. Based on the example from
@@ -68,9 +70,10 @@ public class SolvingForMax {
      */
     public static double[][] generateBigMatrix(int n, int m) {
         double[][] matrix = new double[n][m];
+        Random r = new Random();
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[row].length; col++) {
-                matrix[row][col] = Math.random();
+                matrix[row][col] = r.nextDouble();
                 //System.out.print(matrix[row][col] + "\t");
             }
             //System.out.println();
