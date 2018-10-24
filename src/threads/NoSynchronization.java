@@ -42,16 +42,20 @@ public class NoSynchronization {
         t2.start();
         t1.join();
         t2.join();
-        if (x != 0)
-            System.out.println("x = " + x);
+
+
     }
 
+    public void printX() {
+        System.out.println(x);
+    }
     public static void main(String[] args) {
         try {
             NoSynchronization ns = new NoSynchronization();
             //for (int i = 0; i < 100000; i++) {
                 ns.createThreads();
             //}
+            ns.printX();
         }
         catch (InterruptedException e) {
             System.out.println(e);
