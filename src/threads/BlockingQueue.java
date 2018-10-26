@@ -20,6 +20,7 @@ public class BlockingQueue {
      * @throws InterruptedException
      */
     public synchronized void enqueue(Integer element) throws InterruptedException {
+        //System.out.println("Entering enqueue");
         while (queue.size() == capacity) {
             wait();
         }
@@ -35,10 +36,12 @@ public class BlockingQueue {
      * @throws InterruptedException
      */
     public synchronized Integer dequeue() throws InterruptedException {
+        //System.out.println("Entering dequeue: ");
         while (queue.isEmpty()) {
             wait();
+            //System.out.println("Done waiting");
         }
-
+        //System.out.println("Out of wait");
         Integer item = queue.remove();
         System.out.println("Removing " + item); // should be using Logger instead
 

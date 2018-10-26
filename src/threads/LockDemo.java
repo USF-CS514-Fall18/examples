@@ -12,30 +12,30 @@ public class LockDemo {
     private final Thread worker2;
 
     private final static Object staticLock = new Object();
-    private final Object outerLock;
-    private final Object multiLock;
+    private final Object lockDemoLock1;
+    private final Object lockDemoLock2;
 
     public LockDemo(String name) {
 
-        outerLock = new Object();
-        multiLock = new Object();
+        lockDemoLock1 = new Object();
+        lockDemoLock2 = new Object();
 
 		/*
 		 * Comment in/out different examples and see how the behavior changes.
 		 */
 
         // TT FF TT FF
-        // worker1 = new Worker(outerLock);
-        // worker2 = new Worker(multilock);
+        worker1 = new Worker(lockDemoLock1);
+        worker2 = new Worker(lockDemoLock2);
 
 
         // TT TT FF FF
-        worker1 = new Worker(outerLock);
-        worker2 = new Worker(outerLock);
+        //worker1 = new Worker(lockDemoLock1);
+        //worker2 = new Worker(lockDemoLock1);
 
         // TT FF TT FF
-        // worker1 = new Worker(this);
-        // worker2 = new Worker(this);
+        //worker1 = new Worker(this);
+        //worker2 = new Worker(this);
 
         // TF TF TF TF
         // worker1 = new Worker(staticLock);

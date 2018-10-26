@@ -22,7 +22,7 @@ public class BlockingQueueExample {
 
         @Override
         public void run() {
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 try {
                     int elem = queue.dequeue();
                     //log.debug("Removing "+ elem);
@@ -46,7 +46,7 @@ public class BlockingQueueExample {
 
         @Override
         public void run() {
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 10; i++) {
                 try {
                     int elem = r.nextInt(10);
                     queue.enqueue(elem);
