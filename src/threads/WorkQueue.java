@@ -71,7 +71,9 @@ public class WorkQueue {
         }
     }
 
+    /** Inner class PoolWorker */
     private class PoolWorker extends Thread {
+        @Override
         public void run() {
             Runnable r;
             while (true) {
@@ -81,8 +83,8 @@ public class WorkQueue {
                         {
                             queue.wait();
                         }
-                        catch (InterruptedException ignored)
-                        {
+                        catch (InterruptedException e) {
+                            System.out.println(e);
                         }
                     }
                     if (!running && queue.isEmpty()) {
@@ -93,7 +95,8 @@ public class WorkQueue {
                 try {
                     r.run();
                 }
-                catch (RuntimeException ignore) {
+                catch (RuntimeException e) {
+                    System.out.println(e);
                 }
             }
         }

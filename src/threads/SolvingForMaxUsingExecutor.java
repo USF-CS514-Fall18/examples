@@ -23,9 +23,10 @@ public class SolvingForMaxUsingExecutor {
 
         /** Find the maximum value in the given row
          *
+         * @return maximum value of the row
          */
         @Override
-        public Object call() throws Exception {
+        public Object call()  {
             for (int i = 0; i < row.length; i++)
                 max = Math.max(max, row[i]);
             return max;
@@ -36,13 +37,13 @@ public class SolvingForMaxUsingExecutor {
         double max = Double.MIN_VALUE;
 
         double [][] bigMatrix = generateBigMatrix(NUM_ROWS, 1000000);
-        ExecutorService exec = Executors.newCachedThreadPool();
+        ExecutorService exec = Executors.newFixedThreadPool(NUM_ROWS);
         try {
             Future<Double>[] results = new Future[NUM_ROWS];
             for (int i = 0; i < NUM_ROWS; i++) {
-                Future<Double> res = exec.submit(new Worker(bigMatrix[i]));
-                results[i] = res;
+                results[i] = exec.submit(new Worker(bigMatrix[i]));
             }
+
             for (int i = 0; i < NUM_ROWS; i++) {
                 double val = results[i].get();
                 if (val > max)
@@ -50,8 +51,8 @@ public class SolvingForMaxUsingExecutor {
             }
 
         }
-        catch (Exception e) {
-
+        catch (ExecutionException | InterruptedException e) {
+            System.out.println("Some exception occurred: " + e);
         }
         exec.shutdown();
 

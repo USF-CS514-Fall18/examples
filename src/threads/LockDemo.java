@@ -25,8 +25,8 @@ public class LockDemo {
 		 */
 
         // TT FF TT FF
-        worker1 = new Worker(lockDemoLock1);
-        worker2 = new Worker(lockDemoLock2);
+        //worker1 = new Worker(lockDemoLock1);
+        //worker2 = new Worker(lockDemoLock2);
 
 
         // TT TT FF FF
@@ -38,20 +38,20 @@ public class LockDemo {
         //worker2 = new Worker(this);
 
         // TF TF TF TF
-        // worker1 = new Worker(staticLock);
-        // worker2 = new Worker(staticLock);
+        //worker1 = new Worker(staticLock);
+        //worker2 = new Worker(staticLock);
 
         // TF TF TF TF
-        // worker1 = new Worker(LockDemo.class);
-        // worker2 = new Worker(LockDemo.Worker.class);
+        worker1 = new Worker(LockDemo.class);
+        worker2 = new Worker(LockDemo.Worker.class);
 
         // TF TF TF TF
         // worker1 = new Worker(LockDemo.class);
         // worker2 = new Worker(LockDemo.class);
 
         // TT TT FF FF
-        // worker1 = new Worker(new Object());
-        // worker2 = new Worker(new Object());
+        //worker1 = new Worker(new Object());
+        //worker2 = new Worker(new Object());
 
         worker1.setName(name + "1");
         worker2.setName(name + "2");

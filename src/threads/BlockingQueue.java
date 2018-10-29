@@ -22,12 +22,15 @@ public class BlockingQueue {
     public synchronized void enqueue(Integer element) throws InterruptedException {
         //System.out.println("Entering enqueue");
         while (queue.size() == capacity) {
-            wait();
+            this.wait();
         }
+
+        if (queue.isEmpty())
+            this.notifyAll();
+
         queue.add(element);
         System.out.println("Inserting " + element); //should be using Logger instead
 
-        notifyAll();
     }
 
     /**
@@ -38,14 +41,16 @@ public class BlockingQueue {
     public synchronized Integer dequeue() throws InterruptedException {
         //System.out.println("Entering dequeue: ");
         while (queue.isEmpty()) {
-            wait();
+            this.wait();
             //System.out.println("Done waiting");
         }
         //System.out.println("Out of wait");
+        if (queue.size() == capacity)
+            this.notifyAll();
+
         Integer item = queue.remove();
         System.out.println("Removing " + item); // should be using Logger instead
 
-        notifyAll();
         return item;
     }
 }
