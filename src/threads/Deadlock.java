@@ -28,8 +28,7 @@ public class Deadlock {
                     System.out.println("Thread 1: locked resource 1");
                     //Pause for a bit, simulating some file I/O or
                     //something. Basically, we just want to give the
-                    //other thread a chance to run. Threads and deadlock
-                    //are asynchronous things, but we're trying to force
+                    //other thread a chance to run. We're trying to force
                     //deadlock to happen here...
                     try{
                         Thread.sleep(50); // the lock is NOT released while the thread is sleeping

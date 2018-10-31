@@ -73,6 +73,7 @@ public class WorkQueue {
 
     /** Inner class PoolWorker */
     private class PoolWorker extends Thread {
+
         @Override
         public void run() {
             Runnable r;

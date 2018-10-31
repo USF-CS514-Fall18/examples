@@ -35,8 +35,12 @@ public class Livelock {
             while (isHungry) {
                 // Don't have the spoon, so wait patiently for spouse.
                 if (spoon.owner != this) {
-                    try { Thread.sleep(1); }
-                    catch(InterruptedException e) { continue; }
+                    try {
+                        Thread.sleep(1);
+                    }
+                    catch(InterruptedException e) {
+                        continue;
+                    }
                     continue;
                 }
 
