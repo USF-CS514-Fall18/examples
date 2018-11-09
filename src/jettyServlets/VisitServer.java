@@ -49,6 +49,11 @@ public class VisitServer {
                 HttpServletResponse response)
                 throws ServletException, IOException {
 
+            if (request.getRequestURI().endsWith("favicon.ico")) {
+                response.sendError(HttpServletResponse.SC_NOT_FOUND);
+                return;
+            }
+
             // Output request for debugging (better if use logger)
             System.out.println(Thread.currentThread().getName() + ": " + request.getRequestURI());
 

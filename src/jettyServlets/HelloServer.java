@@ -1,6 +1,5 @@
 package jettyServlets;
 
-
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletHandler;
 
@@ -27,6 +26,10 @@ public class HelloServer {
         // when the user goes to http://localhost:8080/hello, the get request is
         // going to go to a HelloServlet
         handler.addServletWithMapping(HelloServlet.class, "/hello");
+        // when the user goes to http://localhost:8080/bye, the get request is
+        // going to go to a ByeServlet
+
+        handler.addServletWithMapping(ByeServlet.class, "/bye");
 
         server.setHandler(handler);
 
