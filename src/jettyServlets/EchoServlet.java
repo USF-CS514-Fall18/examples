@@ -17,7 +17,6 @@ public class EchoServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         //GET /echo
-        System.out.println("here");
         response.setContentType("text/html");
         response.setStatus(HttpServletResponse.SC_OK);
 

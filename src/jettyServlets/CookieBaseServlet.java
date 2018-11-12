@@ -28,7 +28,7 @@ public class CookieBaseServlet extends HttpServlet {
      * @return current date and time
      */
     public static String getDate() {
-        String format = "yyyy-MM-dd"; //"yyyy-MM-dd hh:mm a";
+        String format = "yyyy-MM-dd";
         DateFormat formatter = new SimpleDateFormat(format);
         return formatter.format(Calendar.getInstance().getTime());
     }

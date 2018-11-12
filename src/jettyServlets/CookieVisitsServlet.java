@@ -44,7 +44,7 @@ public class CookieVisitsServlet extends CookieBaseServlet {
         String visitCount = cookies.get(VISIT_COUNT);
 
         PrintWriter out = response.getWriter();
-        out.printf("<p>");
+        out.print("<p>");
 
         // Update visit count as necessary and output information.
         if ((visitDate == null) || (visitCount == null)) {
@@ -57,7 +57,7 @@ public class CookieVisitsServlet extends CookieBaseServlet {
             visitCount = Integer.toString(Integer.parseInt(visitCount) + 1);
 
             out.println("You have visited this website " + visitCount + " times.");
-            out.printf("Your last visit was on " + visitDate);
+            out.println("Your last visit was on " + visitDate);
         }
 
         out.println("</p>");
@@ -71,7 +71,7 @@ public class CookieVisitsServlet extends CookieBaseServlet {
         }
         else {
             clearCookies(request, response);
-            out.printf("<p>Your visits will not be tracked.</p>");
+            out.println("<p>Your visits will not be tracked.</p>");
         }
 
         finishResponse(request, response);
