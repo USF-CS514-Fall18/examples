@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Hello $name!</p>
+
+<p>Recommended Hotels: </p>
+#foreach( $hotel in $hotels)
+  #if( $hotel=="Holiday Inn")
+    <strong>$hotel</strong><br>
+  #else
+    $hotel</body><br>
+  #end
+#end
+</body>
+</html>
