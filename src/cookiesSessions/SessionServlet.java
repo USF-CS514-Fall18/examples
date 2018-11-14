@@ -1,15 +1,15 @@
-package jettyServlets;
+package cookiesSessions;
 
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * Demonstrates how to use the HttpSession class to keep track of the number of visits for each client
@@ -53,6 +53,7 @@ public class SessionServlet extends HttpServlet {
         DateFormat formatter = new SimpleDateFormat(format);
         visitDate = formatter.format(Calendar.getInstance().getTime());
         session.setAttribute("date", visitDate);
+        session.setMaxInactiveInterval(10);
 
         response.setStatus(HttpServletResponse.SC_OK);
 

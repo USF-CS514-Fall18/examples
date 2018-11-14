@@ -1,4 +1,4 @@
-package jettyServlets;
+package cookiesSessions;
 
 
 import org.eclipse.jetty.server.Server;

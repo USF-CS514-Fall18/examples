@@ -1,4 +1,4 @@
-package jettyServlets;
+package cookiesSessions;
 
 import org.apache.commons.text.StringEscapeUtils;
 
@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Map;
 
 /** The first time the user enters the website, asks the user for the name.
  * Stores the name in the cookie. Prints "Hello" and the name of the user.
