@@ -1,0 +1,54 @@
+Problem 3:
+(a)
+SELECT name
+FROM students
+WHERE graduationDate='05-30-2019';
++--------------+
+| name         |
++--------------+
+| Deepak Kumar |
+| Xiaofeng Tan |
++--------------+
+(b)
+SELECT students.name
+FROM students, enrollment
+WHERE students.id = enrollment.studentId AND courseId=3;
++----------------+
+| name           |
++----------------+
+| Joshua Lee     |
+| Bradon Montoya |
++----------------+
+
+(c)
+SELECT courseId, AVG(GPA)
+FROM students, enrollment
+WHERE students.id=enrollment.studentId
+GROUP BY courseId;
++----------+--------------------+
+| courseId | AVG(GPA)           |
++----------+--------------------+
+|        1 |               3.75 |
+|        2 | 3.7333333492279053 |
+|        3 |  3.600000023841858 |
+|        6 | 3.9000000953674316 |
++----------+--------------------+
+
+(d)
+SELECT courses.name, students.name
+FROM courses, students, enrollment
+WHERE students.id=enrollment.studentId AND enrollment.courseId = courses.id;
++-------+----------------+
+| name  | name           |
++-------+----------------+
+| CS601 | Anita Karp     |
+| CS673 | Anita Karp     |
+| CS690 | Joshua Lee     |
+| CS601 | Alice Chen     |
+| CS673 | Alice Chen     |
+| CS673 | Bradon Montoya |
+| CS690 | Bradon Montoya |
+| CS112 | Deepak Kumar   |
+| CS112 | Xiaofeng Tan   |
++-------+----------------+
+

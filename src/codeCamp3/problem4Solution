@@ -1,0 +1,14 @@
+Problem 4:
+(a) Write a raw HTTP GET request to fetch /docs/courses.html webpage
+from www.mywebsite.com (imaginary website). Assume it uses HTTP/1.1 protocol.
+
+ GET /docs/courses.html HTTP/1.1
+ Host: www.mywebsite.com
+ Connection: close
+
+(b) Write a raw HTTP GET request to fetch weather.html from www.nobadweather.com (imaginary website) with two parameters: zipcode 94105 and language English. Assume the webserver uses HTTP/1.1 protocol.
+
+ GET /weather.html?zipcode=94105&language=english HTTP/1.1
+ Host: www.nobadweather.com
+ Connection: close
+
